@@ -1,21 +1,17 @@
 package game.fighting;
 
 //fighter move that affects the other fighter's stats (atk, def, speed...)
-public class StatsMove {
-	
-	//percentage of the stat that will remain after changes (from 0 to 1)
-	private double percentage;
-	
+public abstract class StatsMove extends PokeMove{
+		
 	//name of the stat that will be affected
 	private String stat;
-	
 	
 	/*
 	 * Constructor (make sure to construct with correct stat (either Attack, Defense or Speed)
 	 */
-	public StatsMove(double percentage, String stat)
+	public StatsMove(double power, String stat)
 	{
-		this.percentage = percentage;
+		this.power = power;
 		this.stat = stat;
 	}
 	
@@ -29,11 +25,11 @@ public class StatsMove {
 			return false;
 		else {
 			if(stat.equals("Defense"))
-				f.defReduction(percentage);
+				f.defReduction(power);
 			else if(stat.equals("Attack"))
-				f.atkReduction(percentage);
+				f.atkReduction(power);
 			else if(stat.equals("Speed"))
-				f.speedReduction(percentage);
+				f.speedReduction(power);
 			
 			return true;
 		}

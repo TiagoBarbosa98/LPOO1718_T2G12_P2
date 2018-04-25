@@ -1,9 +1,7 @@
 package game.fighting;
 
 //fighter moves that deal damage to the opponent (reduces their HP)
-public class DamageMove {
-	
-	private String name;
+public abstract class DamageMove extends PokeMove{
 	
 	private Utility u;
 	
@@ -52,7 +50,7 @@ public class DamageMove {
 	
 	
 	//How much damage the move from Fighter f1 will do (after calculations) to Fighter f2
-	public double dmgOutput(Fighter f1, Fighter f2)
+	public double statReduction(Fighter f1, Fighter f2)
 	{		
 		//modified crit chance to help with calcs
 		double modCrit = critChance / 100.0;

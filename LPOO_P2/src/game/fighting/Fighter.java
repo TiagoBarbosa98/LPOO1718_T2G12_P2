@@ -1,6 +1,8 @@
 package game.fighting;
 
-public class Fighter {
+import java.util.ArrayList;
+
+public abstract class Fighter {
 	
 	protected String name;
 	
@@ -27,6 +29,9 @@ public class Fighter {
 	
 	//some moves make the fighter invunerable to stat reduction
 	protected boolean invunerable;
+	
+	//the list of moves the pokemon has
+	protected ArrayList<PokeMove> moves = new ArrayList(4);
 
 
 	public Fighter(int hp, int def, int atk, int speed)
@@ -140,10 +145,12 @@ public class Fighter {
 	{	
 		int dmg = (int) Math.floor(damage);
 		
-		if(dmg > shield)
+		if(dmg > shield & dmg < hp)
 			hp = (hp - (dmg - shield));
-		else
+		else if (damage < shield)
 			shield = (shield - dmg);
+		else if(dmg > hp)
+			hp = 0;
 	}
 	
 	//reduces the attack value from the fighter
@@ -164,6 +171,9 @@ public class Fighter {
 		speed = (int) Math.floor(speed * percentage);
 	}
 	
-	
+	public int hpPercentage()
+	{
+		return (int) hp/totalHp;
+	}
 
 }

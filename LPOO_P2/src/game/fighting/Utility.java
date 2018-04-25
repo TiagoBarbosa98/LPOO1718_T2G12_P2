@@ -5,8 +5,6 @@ public class Utility {
 	{
 	}
 	
-	
-	//convert these 2 functions to one with multi casting
 	public double numberBetween(double a, double b)
 	{
 		return Math.random() * (b - a) + a;

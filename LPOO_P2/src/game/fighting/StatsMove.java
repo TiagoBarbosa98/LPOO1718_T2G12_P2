@@ -9,30 +9,22 @@ public abstract class StatsMove extends PokeMove{
 	/*
 	 * Constructor (make sure to construct with correct stat (either Attack, Defense or Speed)
 	 */
-	public StatsMove(double power, String stat)
+	public StatsMove(String name, double power, String stat, double accuracy)
 	{
+		/*
+		 * in this case, power shall have values between 0 and 2
+		 * because it'll work as a percentage (0 - 200%)
+		 */
+		this.name = name;
 		this.power = power;
 		this.stat = stat;
+		this.accuracy = accuracy;
 	}
 	
-	/*
-	 * Move that attempts to lower the Fighter's f stats
-	 * Returns true if it's successful or false if it isn't
-	 */
-	public boolean reductionTo(Fighter f)
+	public String getStat()
 	{
-		if(f.isInvunerable())
-			return false;
-		else {
-			if(stat.equals("Defense"))
-				f.defReduction(power);
-			else if(stat.equals("Attack"))
-				f.atkReduction(power);
-			else if(stat.equals("Speed"))
-				f.speedReduction(power);
-			
-			return true;
-		}
+		return stat;
 	}
 
 }
+

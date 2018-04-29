@@ -2,7 +2,11 @@ package game.fighting;
 
 import java.util.ArrayList;
 
-public abstract class Fighter {
+/*
+ * the average of all stats of each fighter ranges between 310 and 320
+ * for example, Combusken's average is (300+260+380+340)/4 = 320
+ */
+public abstract class Pokemon {
 	
 	protected String name;
 	
@@ -31,10 +35,10 @@ public abstract class Fighter {
 	protected boolean invunerable;
 	
 	//the list of moves the pokemon has
-	protected ArrayList<PokeMove> moves = new ArrayList(4);
+	protected ArrayList<PokeMove> moves;
 
 
-	public Fighter(int hp, int def, int atk, int speed)
+	public Pokemon(int hp, int def, int atk, int speed)
 	{
 		this.hp = hp;
 		this.totalHp = hp;
@@ -44,6 +48,8 @@ public abstract class Fighter {
 		this.shield = 0; //always starts at 0
 		this.invunerable = false;
 		this.description = "";
+		
+		 moves = new ArrayList<PokeMove>(4);
 	}
 
 
@@ -153,20 +159,20 @@ public abstract class Fighter {
 			hp = 0;
 	}
 	
-	//reduces the attack value from the fighter
-	public void atkReduction(double percentage)
+	//alters the attack value from the fighter
+	public void atkAlter(double percentage)
 	{
 		atk = (int) Math.floor(atk * percentage);
 	}
 	
-	//reduces the defense value from the fighter
-	public void defReduction(double percentage)
+	//alters the defense value from the fighter
+	public void defAlter(double percentage)
 	{
 		def = (int) Math.floor(def * percentage);
 	}
 	
-	//reduces the speed value from the fighter
-	public void speedReduction(double percentage)
+	//alters the speed value from the fighter
+	public void speedAlter(double percentage)
 	{
 		speed = (int) Math.floor(speed * percentage);
 	}

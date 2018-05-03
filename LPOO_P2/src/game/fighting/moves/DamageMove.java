@@ -1,4 +1,4 @@
-package game.fighting;
+package game.fighting.moves;
 
 //fighter moves that deal damage to the opponent (reduces their HP)
 public abstract class DamageMove extends PokeMove{
@@ -12,7 +12,7 @@ public abstract class DamageMove extends PokeMove{
 	private double critChance;
 	
 	/*
-	 * Get and Set methods
+	 * Get's and Set's methods
 	 */
 
 	public double getCritChance() {

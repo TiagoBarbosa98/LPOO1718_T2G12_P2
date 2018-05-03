@@ -1,6 +1,6 @@
-package game.fighting.moves;
+package game.fighting.moves.collection;
 
-import game.fighting.StatsMove;
+import game.fighting.moves.StatsMove;
 
 //0526.png sprite
 public class BattleCry extends StatsMove{

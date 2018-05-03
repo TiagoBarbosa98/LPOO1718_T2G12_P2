@@ -1,6 +1,6 @@
-package game.fighting.moves;
+package game.fighting.moves.collection;
 
-import game.fighting.DamageMove;
+import game.fighting.moves.DamageMove;
 
 public class HighKick extends DamageMove{
 	

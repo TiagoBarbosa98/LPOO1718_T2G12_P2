@@ -2,6 +2,10 @@ package game.fighting;
 
 import java.util.ArrayList;
 
+import game.fighting.combatLogic.Types;
+import game.fighting.moves.PokeMove;
+import game.fighting.combatLogic.Types;
+
 /*
  * the average of all stats of each fighter ranges between 310 and 320
  * for example, Combusken's average is (300+260+380+340)/4 = 320
@@ -9,6 +13,8 @@ import java.util.ArrayList;
 public abstract class Pokemon {
 	
 	protected String name;
+	
+	protected Types type;
 	
 	//description of the move's purpose
 	protected String description;
@@ -38,7 +44,7 @@ public abstract class Pokemon {
 	protected ArrayList<PokeMove> moves;
 
 
-	public Pokemon(int hp, int def, int atk, int speed)
+	public Pokemon(int hp, int def, int atk, int speed, Types type)
 	{
 		this.hp = hp;
 		this.totalHp = hp;
@@ -48,6 +54,7 @@ public abstract class Pokemon {
 		this.shield = 0; //always starts at 0
 		this.invunerable = false;
 		this.description = "";
+		this.type = type;
 		
 		 moves = new ArrayList<PokeMove>(4);
 	}
@@ -130,6 +137,19 @@ public abstract class Pokemon {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Types getType() {
+		return type;
+	}
+
+
+	public int getTotalHp() {
+		return totalHp;
+	}
+
+	public ArrayList<PokeMove> getMoves() {
+		return moves;
 	}
 
 	

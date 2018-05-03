@@ -5,16 +5,40 @@ import java.util.ArrayList;
 //each trainer will have 3 pokemon per team
 public class Trainer {
 	
+	private String name;
+	/*
+	 * The 3 pokemons the trainer chose to fight
+	 */
 	private ArrayList<Pokemon> team;
 	/*
 	 * each trainer starts with 3 potions that regenerate 80 hp
 	 */
 	private int potions;
 	
-	public Trainer()
+	public Trainer(String name)
 	{
+		this.name = name;
 		team = new ArrayList<Pokemon>(3);
 		potions = 3;
+	}
+	
+	
+	/*
+	 * Get's and Set's methods
+	 */
+	int getTeamSize()
+	{
+		return team.size();
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
 	}
 	
 	/*
@@ -45,11 +69,9 @@ public class Trainer {
 		}
 	}
 	
-	int getTeamSize()
-	{
-		return team.size();
-	}
-	
+	/*
+	 * Adds Pokemon p to current team
+	 */
 	boolean addPokemon(Pokemon p)
 	{
 		if(team.size() < 3)
@@ -60,6 +82,7 @@ public class Trainer {
 		else
 			return false;
 	}
+	
 	
 	public Pokemon getPokemon(int index)
 	{

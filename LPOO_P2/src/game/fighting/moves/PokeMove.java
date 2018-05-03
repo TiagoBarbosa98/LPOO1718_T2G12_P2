@@ -1,10 +1,16 @@
-package game.fighting;
+package game.fighting.moves;
+
+import game.fighting.Utility;
+import game.fighting.combatLogic.Types;
+import game.fighting.combatLogic.Types;
 
 public abstract class PokeMove {
 	
 	protected Utility u;
 	protected String name;
 	protected double power;
+	protected Types type;
+
 	/*
 	 * msg1 will contain the output that should be displayed on the screen
 	 * when the move is used msg1 is always displayed
@@ -19,6 +25,12 @@ public abstract class PokeMove {
 	/*
 	 * Get's And Set's Methods
 	 */
+	public Types getType() {
+		return type;
+	}
+	public void setType(Types type) {
+		this.type = type;
+	}
 	public String getName() {
 		return name;
 	}
@@ -43,7 +55,9 @@ public abstract class PokeMove {
 	public void setAccuracy(double accuracy) {
 		this.accuracy = accuracy;
 	}
-	boolean succesfulAtk()
+	
+	
+	public boolean succesfulAtk()
 	{
 		double random = Math.random();
 		

@@ -1,4 +1,4 @@
-package game.fighting;
+package game.fighting.moves;
 
 //fighter move that affects the other fighter's stats (atk, def, speed...)
 public abstract class StatsMove extends PokeMove{

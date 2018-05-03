@@ -1,26 +1,25 @@
 package game.fighting.combatLogic;
 
-/*
- * In this package we will be creating a state machine for 1v1 pokemon combat
- */
-import game.fighting.PokeMove;
-
-public interface CombatState {
-	void player1Chooses(PokeMove moveChosen);
-	//animation for after the player1 chooses the move he wants to use
-	void player1Attacks();
+public class CombatState {
 	
-	void player2Chooses(PokeMove moveChosen);
-	void player2Attacks();
+	CombatState currentState;
+	State state;
 	
-	void playerDies();
-	
-	enum States{
-		PLAYER1CHOOSING,
-		PLAYER2CHOOSING,
-		PLAYER1ATTACKING,
-		PLAYER2ATTACKING,	
-		PLAYERDIED;
+	public CombatState()
+	{
+		state = State.MENU;
 	}
-
+	
+	void setState(CombatState newState)
+	{
+		currentState = newState;
+	}
+	
+	enum State{
+		MENU,			//The player can choose between the 3 options above
+		CHOOSING_MOVE, 	//The player is choosing a move for the pokemon to use
+		SWITCHING_POKE, //The player is switching his current pokemon with another one
+		USE_POTION,		//The player is using a potion on a pokemon 
+		COMBAT_END;
+	}
 }

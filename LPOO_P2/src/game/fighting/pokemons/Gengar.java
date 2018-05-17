@@ -6,6 +6,6 @@ import game.fighting.combatLogic.Types;
 public class Gengar extends Pokemon{
 	public Gengar()
 	{
-		super(324, 260, 340, 350, Types.WATER);
+		super("Gengar", 324, 260, 340, 350, Types.WATER);
 	}
 }

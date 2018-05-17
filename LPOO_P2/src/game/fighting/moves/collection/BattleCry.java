@@ -1,5 +1,6 @@
 package game.fighting.moves.collection;
 
+import game.fighting.combatLogic.Types;
 import game.fighting.moves.StatsMove;
 
 //0526.png sprite
@@ -10,8 +11,8 @@ public class BattleCry extends StatsMove{
 	 */
 	public BattleCry()
 	{
-		super("Battle Cry", 0.66, "Defense", 0.9);
-		msg1 = "unleashes a battle cry frightening the opponent!";
+		super("Battle Cry", "Defense", 0.66,  0.9, Types.FIGHT);
+		msg1 = " unleashes a battle cry frightening the opponent!";
 	}
 
 }

@@ -6,6 +6,6 @@ import game.fighting.combatLogic.Types;
 public class Snorlax extends Pokemon{
 	public Snorlax()
 	{
-		super(524, 300, 310, 170, Types.NORMAL);
+		super("Snorlax", 524, 300, 310, 170, Types.NORMAL);
 	}
 }

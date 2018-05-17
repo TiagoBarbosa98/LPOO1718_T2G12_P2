@@ -44,8 +44,9 @@ public abstract class Pokemon {
 	protected ArrayList<PokeMove> moves;
 
 
-	public Pokemon(int hp, int def, int atk, int speed, Types type)
+	public Pokemon(String name, int hp, int def, int atk, int speed, Types type)
 	{
+		this.name = name;
 		this.hp = hp;
 		this.totalHp = hp;
 		this.def = def;
@@ -56,7 +57,7 @@ public abstract class Pokemon {
 		this.description = "";
 		this.type = type;
 		
-		 moves = new ArrayList<PokeMove>(4);
+		moves = new ArrayList<PokeMove>(4);
 	}
 
 
@@ -152,6 +153,13 @@ public abstract class Pokemon {
 		return moves;
 	}
 
+	/*
+	 * returns move with index i in the array
+	 */
+	public PokeMove getMove(int i)
+	{
+		return moves.get(i);
+	}
 	
 	/*
 	 * Stats Reductions

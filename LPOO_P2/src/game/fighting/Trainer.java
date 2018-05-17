@@ -1,6 +1,7 @@
 package game.fighting;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 //each trainer will have 3 pokemon per team
 public class Trainer {
@@ -87,6 +88,16 @@ public class Trainer {
 	public Pokemon getPokemon(int index)
 	{
 		return team.get(index);
+	}
+	
+	public void putInFront(int i)
+	{
+		Collections.rotate(team, 2);
+	}
+	
+	public ArrayList<Pokemon> getTeam()
+	{
+		return team;
 	}
 
 }

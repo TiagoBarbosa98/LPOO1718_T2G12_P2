@@ -8,7 +8,7 @@ public class Lucario extends Pokemon {
 	public Lucario()
 	{
 		//	  hp   def  atk  speed
-		super(344, 262, 350, 306, Types.STEEL);
+		super("Lucario", 344, 262, 350, 306, Types.STEEL);
 	}
 
 }
